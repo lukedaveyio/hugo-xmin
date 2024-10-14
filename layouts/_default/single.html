@@ -2,11 +2,11 @@
 <div class="article-meta">
 <h1><span class="title">{{ .Title | markdownify }}</span></h1>
 {{ with .Params.author }}<h2 class="author">{{ . }}</h2>{{ end }}
+<span>Published: {{ if (gt .Params.date 0) }} {{ .Date.Format "02/01/2006" }}{{ end }}
+{{ if (ne .Params.Lastmod .Params.date) }} <br>Last modified: {{ .Lastmod | time.Format "02/01/2006" }}{{end}}</span>
 </div>
 
 <main>
-<span>Published: {{ if (gt .Params.date 0) }} {{ .Date.Format "02/01/2006" }}{{ end }}
-{{ if (ne .Params.Lastmod .Params.date) }} <br>Last modified: {{ .Lastmod | time.Format "02/01/2006" }}{{end}}</span>
 {{ .Content }}
 </main>
 
