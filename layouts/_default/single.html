@@ -5,8 +5,8 @@
 </div>
 
 <main>
-<span>test:</span> {{ if (gt .Params.date 0) }}<span>{{ .Date.Format "DD/MM/YYYY" }}</span>{{ end }}
-<h3 class="date">{{ .Lastmod | time.Format "02/01/2006" }}</h3>
+<span>test: {{ if (gt .Params.date 0) }} {{ .Date.Format "02/01/2006" }}{{ end }}
+\ntest2: {{ .Lastmod | time.Format "02/01/2006" }}</span>
 {{ .Content }}
 </main>
 
