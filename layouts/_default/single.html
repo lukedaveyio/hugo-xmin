@@ -6,7 +6,7 @@
 
 <main>
 <span>Published: {{ if (gt .Params.date 0) }} {{ .Date.Format "02/01/2006" }}{{ end }}
-{{ if (ne .Params.Lastmod .Params.date) }} <br>Last modified: {{ .Lastmod | time.Format "02/01/2006" }}{{end}}</span>
+{{ if (eq .Params.Lastmod .Params.date) }} <br>Last modified: {{ .Lastmod | time.Format "02/01/2006" }}{{end}}</span>
 {{ .Content }}
 </main>
 
