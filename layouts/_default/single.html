@@ -6,7 +6,7 @@
 
 <main>
 <span>test: {{ if (gt .Params.date 0) }} {{ .Date.Format "02/01/2006" }}{{ end }}
-\ntest2: {{ .Lastmod | time.Format "02/01/2006" }}</span>
+<br>2: {{ .Lastmod | time.Format "02/01/2006" }}</span>
 {{ .Content }}
 </main>
 
