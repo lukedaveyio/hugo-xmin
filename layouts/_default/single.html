@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 <div class="article-meta">
-<span><h1><span class="title">{{ .Title | markdownify }}</span></h1>
-<br>Published: {{ if (gt .Params.date 0) }} {{ .Date.Format "02/01/2006" }}{{ end }}
+<h1><span class="title">{{ .Title | markdownify }}</span></h1>
+<span>Published: {{ if (gt .Params.date 0) }} {{ .Date.Format "02/01/2006" }}</span>{{ end }}
 {{ with .Params.author }}<h2 class="author">{{ . }}</h2>{{ end }}
 </div>
 
