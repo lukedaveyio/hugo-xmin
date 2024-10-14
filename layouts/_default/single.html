@@ -7,7 +7,7 @@
 
 <main>
 
-<br> {{ unless (eq .Params.Lastmod .Params.date)}} Last modified:  {{ .Lastmod | time.Format "02/01/2006" }}{{ end }}</span>
+<br> {{ if (eq .Params.Lastmod .Params.date)}} Last modified:  {{ .Lastmod | time.Format "02/01/2006" }}{{ end }}</span>
 {{ .Content }}
 </main>
 
