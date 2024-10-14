@@ -1,12 +1,13 @@
 {{ partial "header.html" . }}
 <div class="article-meta">
-<h1><span class="title">{{ .Title | markdownify }}</span></h1>
+<span><h1><span class="title">{{ .Title | markdownify }}</span></h1>
+<br>Published: {{ if (gt .Params.date 0) }} {{ .Date.Format "02/01/2006" }}{{ end }}
 {{ with .Params.author }}<h2 class="author">{{ . }}</h2>{{ end }}
 </div>
 
 <main>
-<span>Published: {{ if (gt .Params.date 0) }} {{ .Date.Format "02/01/2006" }}{{ end }}
-<br> {{ if .Lastmod }} Last modified:  {{ .Lastmod | time.Format "02/01/2006" }}{{ end }}</span>
+
+<br> {{ with .Params.Lastmod }} Last modified:  {{ . | time.Format "02/01/2006" }}{{ end }}</span>
 {{ .Content }}
 </main>
 
