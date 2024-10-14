@@ -5,8 +5,8 @@
 </div>
 
 <main>
-<span>test: {{ if (gt .Params.date 0) }} {{ .Date.Format "02/01/2006" }}{{ end }}
-<br>2: {{ .Lastmod | time.Format "02/01/2006" }}</span>
+<span>Published: {{ if (gt .Params.date 0) }} {{ .Date.Format "02/01/2006" }}{{ end }}
+<br> {{ #if .Lastmod }} Last modified:  {{ .Lastmod | time.Format "02/01/2006" }}{{ end }}</span>
 {{ .Content }}
 </main>
 
