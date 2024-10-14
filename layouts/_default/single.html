@@ -7,7 +7,7 @@
 
 <main>
 
-<br> {{ ne .Params.Lastmod .Params.date }} Last modified:  {{ .Lastmod | time.Format "02/01/2006" }}</span>
+<span>{{ ne .Params.Lastmod .Params.date }} <br>Last modified: {{ .Lastmod | time.Format "02/01/2006" }}</span>
 {{ .Content }}
 </main>
 
